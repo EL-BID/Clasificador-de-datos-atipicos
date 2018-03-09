@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Departamentos";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Departamentos</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>C&oacute;digo</th>
+                        <th>Departamento</th>
+                        <th>Hogares Procesados</th>
+                        <th>Hogares Iregulares</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var d in ViewBag.Departamentos)
+                    {
+                        <tr>
+                            <td style="vertical-align:middle">@d.cod_dpto</td>
+                            <td style="vertical-align:middle">@d.dpto</td>
+                            <td style="vertical-align:middle">@d.num_procesadas</td>
+                            <td style="vertical-align:middle">@d.num_irregulares</td>
+                            <td style="vertical-align:middle">
+                                <a class="btn btn-default btn-block" href="@Url.Action("Municipios", "Home", new { cod_dpto = d.cod_dpto })">Ver</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

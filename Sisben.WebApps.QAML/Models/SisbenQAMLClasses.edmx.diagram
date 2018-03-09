@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e3f46fda78c40958421367df709b4fd" Name="Diagram1">
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_CONTROL_ENVIOS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_FICHAS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_HOGARES" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_HOGARES_FICHA" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_HOGARES_RECHAZO" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_PERSONAS" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_VIVIENDAS" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.DEPARTAMENTO" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_CategorySets" Width="1.5" PointX="10.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.MUNICIPIO" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_HOGARES_Logs" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_PERSONAS_Logs" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="SISBEN_IVModel.CNS_VIVIENDAS_Logs" Width="1.5" PointX="15.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
