@@ -1,0 +1,856 @@
+﻿@{
+    ViewBag.Title = "Hogar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Ficha#@ViewBag.Hogar.Num_ficha - Hogar#@ViewBag.Hogar.Ide_hogar</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="@Url.Action("Hogares", "Home", new { cod_mpio = ViewBag.Hogar.Cod_mpio })">Volver a lista de hogares</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2><b>Secci&oacute;n B.</b> Datos de la vivienda</h2>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Tip_vivienda)">
+    <div class="col-md-12">
+        <label>17. Tipo de vivienda:</label>
+        <span>@ViewBag.Vivienda.Tip_vivienda</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Tip_mat_paredes)">
+    <div class="col-md-12">
+        <label>18. Material predominante de las paredes exteriores:</label>
+        <span>@ViewBag.Vivienda.Tip_mat_paredes</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Tip_mat_pisos)">
+    <div class="col-md-12">
+        <label>19. Material predominante de los pisos:</label>
+        <span>@ViewBag.Vivienda.Tip_mat_pisos</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <label>20. &iquest;Con cu&aacute;les de los siguientes servicios p&uacute;blicos, privados o comunales cuenta la vivienda?</label>
+        <table class="table table-condensed table-bordered">
+            <tbody>
+                <tr>
+                    <th>A. Energ&iacute; el&eacute;ctrica</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Ind_tiene_energia)">@ViewBag.Vivienda.Ind_tiene_energia (Estrato: @ViewBag.Vivienda.Tip_estrato_energia)</div></td>
+                </tr>
+                <tr>
+                    <th>B. Alcantarillado</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Ind_tiene_alcantarillado)">@ViewBag.Vivienda.Ind_tiene_alcantarillado</div></td>
+                </tr>
+                <tr>
+                    <th>C. Gas natural domiciliario</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Ind_tiene_gas)">@ViewBag.Vivienda.Ind_tiene_gas</div></td>
+                </tr>
+                <tr>
+                    <th>D. Recolecci&oacute;n de basuras</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Ind_tiene_recoleccion)">@ViewBag.Vivienda.Ind_tiene_recoleccion</div></td>
+                </tr>
+                <tr>
+                    <th>E. Acueducto</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Ind_tiene_acueducto)">@ViewBag.Vivienda.Ind_tiene_acueducto (Estrato: @ViewBag.Vivienda.Tip_estrato_acueducto)</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Num_cuartos_vivienda)">
+    <div class="col-md-12">
+        <label>21. &iquest;Con cu&aacute;ntos cuartos, incluyendo sala comedor, cuenta la vivienda?:</label>
+        <span>@ViewBag.Vivienda.Num_cuartos_vivienda</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(ViewBag.ViviendaLog.Num_hogares_vivienda)">
+    <div class="col-md-12">
+        <label>22. &iquest;Cu&aacute;ntos grupos de personas que manejan su propio presupuesto (hogares) hay en esta vivienda?:</label>
+        <span>@ViewBag.Vivienda.Num_hogares_vivienda</span>
+    </div>
+</div>
+
+
+<h2><b>Secci&oacute;n C.</b> Datos del hogar</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <label>23. Hogar:</label>
+        <span>@ViewBag.Hogar.Ide_hogar de @ViewBag.Vivienda.Num_hogares_vivienda</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_ocupa_vivienda)">
+    <div class="col-md-12">
+        <label>24. La vivienda ocupada por este hogar es:</label>
+        <span>@ViewBag.Hogar.Tip_ocupa_vivienda</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_cuartos_exclusivos)">
+    <div class="col-md-12">
+        <label>25. Incluyendo sala y comedor, &iquest;cu&aacute;ntos cuartos utiliza este hogar en forma exclusiva?:</label>
+        <span>@ViewBag.Hogar.Num_cuartos_exclusivos</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_cuartos_dormir)">
+    <div class="col-md-12">
+        <label>26. &iquest;Cu&aacute;ntos de esos cuartos son usados para dormir?:</label>
+        <span>@ViewBag.Hogar.Num_cuartos_dormir</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_cuartos_unicos_dormir)">
+    <div class="col-md-12">
+        <label>27. &iquest;Cu&aacute;ntos cuartos son usados exclusivamente para dormir?:</label>
+        <span>@ViewBag.Hogar.Num_cuartos_unicos_dormir</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_sanitario)">
+    <div class="col-md-12">
+        <label>28. &iquest;Qu&eacute; tipo de sanitario utiliza este hogar?:</label>
+        <span>@ViewBag.Hogar.Tip_sanitario</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.Hogar.Tip_ubi_sanitario)">
+    <div class="col-md-12">
+        <label>29. &iquest;D&oacute;nde se encuentra el sanitario que usan las personas de este hogar?:</label>
+        <span>@ViewBag.Hogar.Tip_ubi_sanitario</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_uso_sanitario)">
+    <div class="col-md-12">
+        <label>30. El sanitario que usan las personas de este hogar es:</label>
+        <span>@ViewBag.Hogar.Tip_uso_sanitario</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_origen_agua)">
+    <div class="col-md-12">
+        <label>31. El agua para el consumo o preparaci&oacute;n de alimentos la obtienen principalmente de...:</label>
+        <span>@ViewBag.Hogar.Tip_origen_agua</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_agua_llega_7dias)">
+    <div class="col-md-12">
+        <label>32. &iquest;El agua llega al hogar los siete d&iacute;as de la semana?:</label>
+        <span>@ViewBag.Hogar.Ind_agua_llega_7dias (@ViewBag.Hogar.Num_dias_llega d&iacute;as)</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_agua_llega_24horas)">
+    <div class="col-md-12">
+        <label>33. En los d&iacute; que llega el agua. &iquest;el suministro es de 24 horas?:</label>
+        <span>@ViewBag.Hogar.Ind_agua_llega_24horas (@ViewBag.Hogar.Num_horas_llega horas)</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_uso_agua_beber)">
+    <div class="col-md-12">
+        <label>34. El agua para beber principalmente:</label>
+        <span>@ViewBag.Hogar.Tip_uso_agua_beber</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_elimina_basura)">
+    <div class="col-md-12">
+        <label>35. &iquest;C&oacute;mo eliminan principalmente la basura en este hogar?:</label>
+        <span>@ViewBag.Hogar.Tip_elimina_basura</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_cocina)">
+    <div class="col-md-12">
+        <label>36. &iquest;El hogar tiene cocina?:</label>
+        <span>@ViewBag.Hogar.Ind_tiene_cocina</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_prepara_alimentos)">
+    <div class="col-md-12">
+        <label>37. &iquest;En d&oacute;nde preparan los alimentos las personas de este hogar?:</label>
+        <span>@ViewBag.Hogar.Tip_prepara_alimentos</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_uso_cocina)">
+    <div class="col-md-12">
+        <label>38. La cocina o sitio para preparar los alimentos es:</label>
+        <span>@ViewBag.Hogar.Tip_uso_cocina</span>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Tip_energia_cocina)">
+    <div class="col-md-12">
+        <label>39. &iquest;Qu&eacute; energ&iacute;a o combustible utiliza principalmente este hogar para cocinar?:</label>
+        <span>@ViewBag.Hogar.Tip_energia_cocina</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <label>40. &iquest;Cu&aacute;les de los siguientes bienes o servicios posee este hogar?</label>
+        <table class="table table-condensed table-bordered">
+            <tbody>
+                <tr>
+                    <th>A. Nevera o refrigerador</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_nevera)">@ViewBag.Hogar.Ind_tiene_nevera</div></td>
+                </tr>
+                <tr>
+                    <th>B. M&aacute; lavadora de ropa</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_lavadora)">@ViewBag.Hogar.Ind_tiene_lavadora</div></td>
+                </tr>
+                <tr>
+                    <th>C. Computador</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_pc)">@ViewBag.Hogar.Ind_tiene_pc</div></td>
+                </tr>
+                <tr>
+                    <th>D. Conexi&oacute;n a internet</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_internet)">@ViewBag.Hogar.Ind_tiene_internet</div></td>
+                </tr>
+                <tr>
+                    <th>E. Moto o motoneta</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_moto)">@ViewBag.Hogar.Ind_tiene_moto</div></td>
+                </tr>
+                <tr>
+                    <th>F. Tractor</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_tractor)">@ViewBag.Hogar.Ind_tiene_tractor</div></td>
+                </tr>
+                <tr>
+                    <th>G. Carro</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_carro)">@ViewBag.Hogar.Ind_tiene_carro</div></td>
+                </tr>
+                <tr>
+                    <th>H. Bienes ra&iacute;ces</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_tiene_bien_raiz)">@ViewBag.Hogar.Ind_tiene_bien_raiz</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <label>41. &iquest;Cu&aacute;l es el gasto mensual de este hogar en estos conceptos?</label>
+        <table class="table table-condensed table-bordered">
+            <tbody>
+                <tr>
+                    <th>A. Alimentaci&oacute;n</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_alimento)">@ViewBag.Hogar.Ind_gasto_alimento</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_alimento)">$@ViewBag.Hogar.Vlr_gasto_alimento</div></td>
+                </tr>
+                <tr>
+                    <th>B. Transporte</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_transporte)">@ViewBag.Hogar.Ind_gasto_transporte</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_transporte)">$@ViewBag.Hogar.Vlr_gasto_transporte</div></td>
+                </tr>
+                <tr>
+                    <th>C. Educaci&oacute;n)</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_educacion)">@ViewBag.Hogar.Ind_gasto_educacion</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_educacion)">$@ViewBag.Hogar.Vlr_gasto_educacion</div></td>
+                </tr>
+                <tr>
+                    <th>D. Salud</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_salud)">@ViewBag.Hogar.Ind_gasto_salud</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_salud)">$@ViewBag.Hogar.Vlr_gasto_salud</div></td>
+                </tr>
+                <tr>
+                    <th>E. Servicios p&uacute;blicos</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_serv_publicos)">@ViewBag.Hogar.Ind_gasto_serv_publicos</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_serv_publicos)">$@ViewBag.Hogar.Vlr_gasto_serv_publicos</div></td>
+                </tr>
+                <tr>
+                    <th>F. Celular</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_celular)">@ViewBag.Hogar.Ind_gasto_celular</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_celular)">$@ViewBag.Hogar.Vlr_gasto_celular</div></td>
+                </tr>
+                <tr>
+                    <th>G. Arriendo</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_arriendo)">@ViewBag.Hogar.Ind_gasto_arriendo</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_arriendo)">$@ViewBag.Hogar.Vlr_gasto_arriendo</div></td>
+                </tr>
+                <tr>
+                    <th>H. Otros</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_gasto_otros)">@ViewBag.Hogar.Ind_gasto_otros</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Vlr_gasto_otros)">$@ViewBag.Hogar.Vlr_gasto_otros</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_habita_vivienda)">
+    <div class="col-md-12">
+        <label>42. &iquest;Cu&aacute;nto tiempo lleva habitando esta vivienda?:</label>
+        <span>@ViewBag.Hogar.Num_habita_vivienda</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <label>43. &iquest;Durante el tiempo que lleva habitando su vivienda ha sido afectada por alguno de los siguientes eventos?</label>
+        <table class="table table-condensed table-bordered">
+            <tbody>
+                <tr>
+                    <th>A. Inundaciones, crecientes, arroyos</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_evento_inundacion)">@ViewBag.Hogar.Ind_evento_inundacion</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_evento_inundacion)">@ViewBag.Hogar.Num_evento_inundacion veces</div></td>
+                </tr>
+                <tr>
+                    <th>B. Avalanchas, derrumbes o deslizamientos</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_evento_avalancha)">@ViewBag.Hogar.Ind_evento_avalancha</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_evento_avalancha)">@ViewBag.Hogar.Num_evento_avalancha veces</div></td>
+                </tr>
+                <tr>
+                    <th>C. Terremotos</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_evento_terremoto)">@ViewBag.Hogar.Ind_evento_terremoto</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_evento_terremoto)">@ViewBag.Hogar.Num_evento_terremoto veces</div></td>
+                </tr>
+                <tr>
+                    <th>D. Incendios</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_evento_incendio)">@ViewBag.Hogar.Ind_evento_incendio</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_evento_incendio)">@ViewBag.Hogar.Num_evento_incendio veces</div></td>
+                </tr>
+                <tr>
+                    <th>E. Vendavales, ventarrones, tormentas</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_evento_vendaval)">@ViewBag.Hogar.Ind_evento_vendaval</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_evento_vendaval)">@ViewBag.Hogar.Num_evento_vendaval veces</div></td>
+                </tr>
+                <tr>
+                    <th>F. Hundimientos de terreno</th>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Ind_evento_hundimiento)">@ViewBag.Hogar.Ind_evento_hundimiento</div></td>
+                    <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@ViewBag.HogarLog.Num_evento_hundimiento)">@ViewBag.Hogar.Num_evento_hundimiento veces</div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md12">
+        <ul class="nav nav-tabs">
+            @{ var first = true; }
+            @foreach (var p in ViewBag.Personas)
+            {
+                <li @{ WriteLiteral(first ? " class=\"active\"" : ""); }>
+                    <a data-toggle="tab" href="#persona_@p.Ide_persona">
+                        @p.Ide_persona. @{ Write(string.Join(" ", new string[] { p.Pri_nombre, p.Seg_nombre, p.Pri_apellido, p.Seg_apellido })); }
+                    </a>
+                </li>
+                first = false;
+            }
+        </ul>
+
+        <div class="tab-content panel panel-default">
+            @{ first = true; }
+            @foreach (Sisben.WebApps.QAML.Models.CNS_PERSONAS p in ViewBag.Personas)
+                {
+                    var scores = ((Sisben.WebApps.QAML.Models.CNS_PERSONAS_Logs[])ViewBag.PersonasLog).Where(x => x.Ide_persona == p.Ide_persona).First();
+                <div id="persona_@p.Ide_persona" class="tab-pane fade in@{ WriteLiteral(first ? " active" : ""); } panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><b>Secci&oacute;n D.</b> Antecedentes sociodemogr&aacute;ficos</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>45. N&uacute;mero de orden:</label>
+                            <span>@p.Ide_persona</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>46. Apellidos completos:</label>
+                            <span>@{ Write($"{p.Pri_apellido} {p.Seg_apellido}".Trim()); }</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>47. Nombres completos:</label>
+                            <span>@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Sexo_persona)">
+                        <div class="col-md-12">
+                            <label>48. Sexo:</label>
+                            <span>@p.Sexo_persona</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_documento)">
+                        <div class="col-md-12">
+                            <label>49. Tipo de documento de identidad:</label>
+                            <span>@p.Tip_documento</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>50. N&uacute;mero de documento de identidad:</label>
+                            <span>@p.Num_documento</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Fec_nacimiento)">
+                        <div class="col-md-12">
+                            <label>51. &iquest;Cu&aacute;l es la fecha de nacimiento de '@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }'?:</label>
+                            <span>@p.Fec_nacimiento.ToString("yyyy-MM-dd")</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>52. &iquest;Cu&aacute;l es la fecha de expedici&oacute;n del documento?:</label>
+                            <span>@p.Fec_documento</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>53. Lugar de expedici&oacute;n del documento:</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>A. Nombre del departamento</th>
+                                        <td>@p.Cod_dpto_documento</td>
+                                    </tr>
+                                    <tr>
+                                        <th>B. Nombre del municipio</th>
+                                        <td>@p.Cod_mpio_documento</td>
+                                    </tr>
+                                    <tr>
+                                        <th>C. Pa&iacute;s de nacionalidad</th>
+                                        <td>@p.Cod_pais_documento</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_parentesco)">
+                        <div class="col-md-12">
+                            <label>54. &iquest;Cu&aacute;l es el parentesco de '@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }' con el jefe de este hogar?:</label>
+                            <span>@p.Tip_parentesco</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_estado_civil)">
+                        <div class="col-md-12">
+                            <label>55. Estado civil de '@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }':</label>
+                            <span>@p.Tip_estado_civil</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_conyuge_vive_hogar)">
+                        <div class="col-md-12">
+                            <label>56. &iquest;El c&oacute;nyuge de '@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }' vive en este hogar?:</label>
+                            <span>
+                                @p.Ind_conyuge_vive_hogar
+                                @if (p.Ide_conyuge > 0)
+                                {
+                                    Write('(');
+                                    <a data-toggle="tab" href="#persona_@p.Ide_conyuge">Persona#@p.Ide_conyuge</a>
+                                    Write(')');
+                                }
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_padre_vive_hogar)">
+                        <div class="col-md-12">
+                            <label>57. &iquest;El padre o madre de '@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }' vive en este hogar?:</label>
+                            <span>
+                                @p.Ind_padre_vive_hogar
+                                @if (p.Ide_padre > 0)
+                                {
+                                    Write('(');
+                                    <a data-toggle="tab" href="#persona_@p.Ide_padre">Persona#@p.Ide_padre</a>
+                                    Write(')');
+                                }
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_pariente_domestico)">
+                        <div class="col-md-12">
+                            <label>58. &iquest;Su parentesco es 16 o 18?:</label>
+                            <span>
+                                @p.Ind_pariente_domestico
+                                @if (p.Ide_serv_domestico > 0)
+                                {
+                                    Write('(');
+                                    <a data-toggle="tab" href="#persona_@p.Ide_serv_domestico">Persona#@p.Ide_serv_domestico</a>
+                                    Write(')');
+                                }
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><b>Secci&oacute;n E.</b> Salud y fecundidad</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>59. &iquest;Por enfermedad, accidente o de nacimiento tiene limitantes permanentes para...?</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Ver</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_ver)">@p.Ind_discap_ver</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Oir</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_oir)">@p.Ind_discap_oir</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Hablar</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_hablar)">@p.Ind_discap_hablar</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Moverse o caminar por s&iacute; mismo</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_moverse)">@p.Ind_discap_moverse</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ba&ntilde;arse, vestirse o alimentarse por s&iacute; mismo</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_bañarse)">@p.Ind_discap_bañarse</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dificultad para salir a la calle sin ayuda o compa&ntilde;&iacute;a</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_salir)">@p.Ind_discap_salir</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Entender o aprender</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_entender)">@p.Ind_discap_entender</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Ninguna de las anteriores</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_discap_ninguna)">@p.Ind_discap_ninguna</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_Seg_social)">
+                        <div class="col-md-12">
+                            <label>60. &iquest;Cu&aacute;l de los siguientes reg&iacute;menes de seguridad social en salud est&aacute; afiliado como cotizante o beneficiario?:</label>
+                            <span>@p.Tip_Seg_social</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_enfermo_30)">
+                        <div class="col-md-12">
+                            <label>61. En los &uacute;ltimos 30 d&iacute;as..., &iquest;tuvo alguna enfermedad, accidente, problema odontol&oacute;gico o alg&uacute;n problema de salud que no haya implicado hospitalizaci&oacute;n?:</label>
+                            <span>@p.Ind_enfermo_30</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_acudio_salud)">
+                        <div class="col-md-12">
+                            <label>62. &iquest;Acudi&oacute; a una instituci&oacute;n prestadora de servicios de salud, un m&eacute;dico general, especialista, odont&oacute;logo, terapeuta o profesional de la salud?:</label>
+                            <span>@p.Ind_acudio_salud</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_fue_atendido_salud)">
+                        <div class="col-md-12">
+                            <label>63. &iquest;Lo atendieron?:</label>
+                            <span>@p.Ind_fue_atendido_salud</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_esta_embarazada)">
+                        <div class="col-md-12">
+                            <label>64. &iquest;Est&aacute; embarazada?:</label>
+                            <span>@p.Ind_esta_embarazada</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_tuvo_hijos)">
+                        <div class="col-md-12">
+                            <label>65. &iquest;Ha tenido hijos nacidos vivos?:</label>
+                            <span>@p.Ind_tuvo_hijos</span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><b>Secci&oacute;n F.</b> Atenci&oacute;n a menores de 5 a&ntilde;os</h2>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_cuidado_niños)">
+                        <div class="col-md-12">
+                            <label>66. &iquest;D&oacute;nde o con qui&eacute;n permanece '' durante la mayor parte del tiempo entre semana?:</label>
+                            <span>@p.Tip_cuidado_niños</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_recibe_comida)">
+                        <div class="col-md-12">
+                            <label>67. &iquest;Recibe o toma desayuno o almuerzo donde permanece la mayor parte del tiempo entre semana?:</label>
+                            <span>@p.Ind_recibe_comida</span>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><b>Secci&oacute;n G.</b> Educaci&oacute;n - Personas de 5 a&ntilde;os y m&aacute;s</h2>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_leer_escribir)">
+                        <div class="col-md-12">
+                            <label>68. &iquest;Sabe leer y escribir?:</label>
+                            <span>@p.Ind_leer_escribir</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_estudia)">
+                        <div class="col-md-12">
+                            <label>69. &iquest;Actualmente estudia (asiste a preescolar, escuela, colegio o universidad)?:</label>
+                            <span>@p.Ind_estudia</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>70. &iquest;Cu&aacute;l es el nivel educativo m&aacute;s alto alcanzado y el &uacute;ltimo a&ntilde;o o grado aprobado en ese nivel?:</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Nivel</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Niv_educativo)">@p.Niv_educativo</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Grado</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Grado_alcanzado)">@p.Grado_alcanzado</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_fondo_pensiones)">
+                        <div class="col-md-12">
+                            <label>71. &iquest;Cotiza a un fondo de pensiones?:</label>
+                            <span>@p.Ind_fondo_pensiones</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><b>Secci&oacute;n H.</b> Ocupaci&oacute;n e ingresos - Personas de 8 a&ntilde;os y m&aacute;s</h2>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_actividad_mes)">
+                        <div class="col-md-12">
+                            <label>72. &iquest;Cu&aacute;l fue su actividad principal en EL &Uacute;LTIMO MES?:</label>
+                            <span>@p.Tip_actividad_mes</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Num_sem_buscando)">
+                        <div class="col-md-12">
+                            <label>73. &iquest;Cu&aacute;ntas semanas lleva buscando trabajo?:</label>
+                            <span>@p.Num_sem_buscando</span>
+                        </div>
+                    </div>
+
+                    <div class="row @Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Tip_empleado)">
+                        <div class="col-md-12">
+                            <label>74. En este trabajo '@{ Write($"{p.Pri_nombre} {p.Seg_nombre}".Trim()); }' es:</label>
+                            <span>@p.Tip_empleado</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>75. Antes de descuentos, &iquest;cu&aacute;nto gan&oacute; el MES PASADO en este empleo?:</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_salario)">@p.Ind_ingr_salario</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_salario)">@p.Vlr_ingr_salario</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>76A. &iquest;Cu&aacute;l fue la ganancia neta o los honorarios netos en esta actividad, negocio, profesi&oacute;n o finca el MES PASADO?:</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_honorarios)">@p.Ind_ingr_honorarios</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_honorarios)">@p.Vlr_ingr_honorarios</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>76B. &iquest;Cu&aacute;l fue la ganancia neta del negocio o de la cosecha durante los &uacute;ltimos 12 meses?:</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_cosecha)">@p.Ind_ingr_cosecha</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Meses</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Num_mes_ingr_cosecha)">@p.Num_mes_ingr_cosecha</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. anual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_cosecha)">@p.Vlr_ingr_cosecha</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>77. El mes pasado recibi&oacute; ingresos por...:</label>
+                            <table class="table table-condensed table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2" colspan="2">A. Pensi&oacute;n o jubilaci&oacute;n por vejez o invalidez</th>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_pension)">@p.Ind_ingr_pension</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_pension)">$@p.Vlr_ingr_pension</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" colspan="2">B. Dinero que recibe de otros hogares o personas residentes en el pa&iacute;s</th>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_remesa_pais)">@p.Ind_ingr_remesa_pais</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_remesa_pais)">$@p.Vlr_ingr_remesa_pais</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" colspan="2">C. Dinero que recibe de otros hogares o personas residentes fuera del pa&iacute;s</th>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_remesa_exterior)">@p.Ind_ingr_remesa_exterior</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_remesa_exterior)">$@p.Vlr_ingr_remesa_exterior</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" colspan="2">D. Arriendos</th>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_arriendos)">@p.Ind_ingr_arriendos</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_arriendos)">$@p.Vlr_ingr_arriendos</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2" colspan="2">E. Otros ingresos diferentes a subsidios del Estado</th>
+                                        <th>C.R.</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_otros_ingresos)">@p.Ind_otros_ingresos</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_otros_ingresos)">$@p.Vlr_otros_ingresos</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="3">F. Subsidios o ayudas del Estado</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Ind_ingr_estado)">@p.Ind_ingr_estado</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="6">G. Subsidios del Estado</th>
+                                        <th rowspan="2">Familias en Acci&oacute;n</th>
+                                        <th>C.R.</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. Mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_fam_accion)">$@p.Vlr_ingr_fam_accion</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">Colombia Mayor</th>
+                                        <th>C.R.</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. Mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_col_mayor)">$@p.Vlr_ingr_col_mayor</div></td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">Otros subsidios del Estado</th>
+                                        <th>C.R.</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Vr. Mensual ($)</th>
+                                        <td><div class="@Sisben.WebApps.QAML.Helpers.Alert.GetClass(@scores.Vlr_ingr_otro_subsidio)">$@p.Vlr_ingr_otro_subsidio</div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                first = false;
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="@Url.Action("Hogares", "Home", new { cod_mpio = ViewBag.Hogar.Cod_mpio })">Volver a lista de hogares</a>
+    </div>
+</div>

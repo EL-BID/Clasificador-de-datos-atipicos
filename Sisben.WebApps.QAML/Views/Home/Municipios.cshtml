@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Municipios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Municipios del departamento '@ViewBag.Departamento.dpto (@ViewBag.Departamento.cod_dpto)'</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Volver a lista de departamentos</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>C&oacute;digo</th>
+                        <th>Municipio</th>
+                        <th>Hogares Procesados</th>
+                        <th>Hogares Iregulares</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in ViewBag.Municipios)
+                    {
+                        <tr>
+                            <td style="vertical-align:middle">@m.cod_mpio</td>
+                            <td style="vertical-align:middle">@m.mpio</td>
+                            <td style="vertical-align:middle">@m.num_procesadas</td>
+                            <td style="vertical-align:middle">@m.num_irregulares</td>
+                            <td style="vertical-align:middle">
+                                <a class="btn btn-default btn-block" href="@Url.Action("Hogares", "Home", new { cod_mpio = m.cod_mpio })">Ver</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Volver a lista de departamentos</a>
+    </div>
+</div>
