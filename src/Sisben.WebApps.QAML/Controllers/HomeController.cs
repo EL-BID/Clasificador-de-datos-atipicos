@@ -6,8 +6,16 @@ using System.Web.Mvc;
 
 namespace Sisben.WebApps.QAML.Controllers
 {
+    /// <summary>
+    /// Controlador principal que contiene las acciones de las vistas de la aplicación Web.
+    /// </summary>
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Esta acción muestra una vista con el listado de departamentos y los hogares
+        /// procesados (e irregulares) para cada uno.
+        /// </summary>
+        /// <returns>Retorna un objeto ActionResult que contiene los departamentos con sus indicadores.</returns>
         public ActionResult Index()
         {
             using (var ctx = new Models.SISBEN_IVEntities())
@@ -17,6 +25,16 @@ namespace Sisben.WebApps.QAML.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Esta acción muestra una vista con el listado de municipios para el departamento
+        /// especificado en el parámetro *cod_dpto*. Este listado muestra los hogares procesados
+        /// y, de estos, los hogares clasificados como irregulares.
+        /// </summary>
+        /// <param name="cod_dpto">Código del departamento para el cual se desean listar los municipios.</param>
+        /// <returns>
+        /// Retorna un objeto ActionResult que contiene los municipios del departamento especificado
+        /// en el parámetro *cod_dpto* y la información del departamento.
+        /// </returns>
         public ActionResult Municipios(string cod_dpto)
         {
             var id = Convert.ToInt32(cod_dpto);
@@ -28,6 +46,16 @@ namespace Sisben.WebApps.QAML.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Esta acción muestr una vista con el listado de hogares para el municipio especificado
+        /// en el parámetro *cod_mpio*. Este listado muestra los hogares procesados y, de estos,
+        /// los hogares clasificados como irregulares.
+        /// </summary>
+        /// <param name="cod_mpio">Código del municipio para el cual se desean listar los hogares.</param>
+        /// <returns>
+        /// Retorna un objeto ActionResult que contiene los hogares del municipio especificado en el
+        /// parámetro *cod_mpio* y la información del municipio.
+        /// </returns>
         public ActionResult Hogares(string cod_mpio)
         {
             var id = Convert.ToInt32(cod_mpio);
@@ -42,6 +70,20 @@ namespace Sisben.WebApps.QAML.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Esta acción muestra vista con el detalle de un hogar espeicficado en los parámetros
+        /// *num_ficha* e *ide_hogar*. En esta vista se cargan los siguientes datos:
+        /// 
+        /// * Datos del hogar en cuestión
+        /// * Datos de la vivienda a la que pertenece el hogar en cuestión
+        /// * Datos de las personas integrantes del hogar en cuestión
+        /// * Registro de puntajes de las variables del hogar
+        /// * Registro de puntajes de las variables de la vivienda
+        /// * Registro de puntajes de las variables de las personas
+        /// </summary>
+        /// <param name="num_ficha">Número de ficha a la que está asociado el hogar.</param>
+        /// <param name="ide_hogar">Número de orden del hogar dentro de la ficha.</param>
+        /// <returns>Retorna un objet ActionResult que contiene los datos mensionados en el resumen.</returns>
         public ActionResult Hogar(int num_ficha, byte ide_hogar)
         {
             using (var ctx = new Models.SISBEN_IVEntities())
@@ -53,29 +95,6 @@ namespace Sisben.WebApps.QAML.Controllers
                 ViewBag.HogarLog = ctx.CNS_HOGARES_Logs.Where(x => x.Num_ficha == num_ficha && x.Ide_hogar == ide_hogar).OrderByDescending(x => x.Fec_evaluado).First();
                 ViewBag.PersonasLog = ctx.CNS_PERSONAS_Logs.Where(x => x.Num_ficha == num_ficha && x.Ide_hogar == ide_hogar).ToArray();
             }
-            return View();
-        }
-
-        public ActionResult ProcesarProximoHogar()
-        {
-            using (var ctx = new Models.SISBEN_IVEntities())
-            {
-                ctx.sp__ClasificarProximoHogar();
-            }
-            return Redirect(Url.Action("Index", "Home"));
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
