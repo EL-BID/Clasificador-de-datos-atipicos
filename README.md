@@ -13,25 +13,25 @@ Esta aplicación Web permite ver indicadores de procesamiento/clasificación por
 
 Al iniciar, en la página principal, la aplicación muestra los indicadores por departamento como se muestra en la siguiente captura de pantalla.
 
-![Capture-DEPARTAMENTOS.png](Capture-DEPARTAMENTOS.png "DEPARTAMENTOS")
+![Capture-DEPARTAMENTOS.png](img/Capture-DEPARTAMENTOS.PNG "DEPARTAMENTOS")
 
 Como se puede observar en la captura de pantalla anterior, podemos ver el código del departamento, nombre del departamento, cantidad de hogares procesados y la cantidad de hogares clasificados como irregulares dentro de dicho departamento.
 
 También contamos con un botón de acción **Ver** para cada departamento. Este botón nos permite visualizar el listado de municipios del departamento en cuestión. En la siguiente captura de pantalla se muestra dicho listado:
 
-![Capture-MUNICIPIOS.png](Capture-MUNICIPIOS.png "MUNICIPIOS")
+![Capture-MUNICIPIOS.png](img/Capture-MUNICIPIOS.PNG "MUNICIPIOS")
 
 En esta pantalla podemos observar que tenemos un listado similar al anterior, donde podemos ver el código del municipio, nombre del municipio, cantidad de hogares procesados por municipio y la cantidad de hogares clasificados como irregulares para cada municipio. También contamos con el mismo botón **Ver** que, en este caso, nos permite ver el listado de hogares irregulares para el municipio en cuestión.
 
 El listado de hogares irregulares se ve como se muestra a continuación:
 
-![Capture-HOGARES.png](img/Capture-HOGARES.png "HOGARES IRREGULARES")
+![Capture-HOGARES.png](img/Capture-HOGARES.PNG "HOGARES IRREGULARES")
 
 Aquí podemos observar cada uno de los hogares por su número de ficha y número de hogar dentro de la ficha. También podemos observar la fecha y hora en la cuál fue procesado por el [clasificador](https://github.com/EL-BID/Clasificador-SISBEN-ML) y un botón **Ver** que nos permite ver en detalle las variables de este hogar y la clasificación independiente de cada una de ellas.
 
 A continuación mostramos como se ve el detalle de un hogar en particular:
 
-![Capture-HOGAR.png](img/Capture-HOGAR.png "HOGAR IRREGULAR")
+![Capture-HOGAR.png](img/Capture-HOGAR.PNG "HOGAR IRREGULAR")
 
 ![Color-RED.png](img/Color-RED.png "COLOR-RED") [0, 25)% de certeza
 ![Color-YELLOW.png](img/Color-YELLOW.png "COLOR-YELLOW") [25, 75)% de certeza
@@ -41,7 +41,7 @@ Los valores de certeza con los que el [clasificador](https://github.com/EL-BID/C
 
 Dentro de esta última vista también se pueden ver las personas miembros del hogar.
 
-![Capture-PERSONAS.png](img/Capture-PERSONAS.png "PERSONAS")
+![Capture-PERSONAS.png](img/Capture-PERSONAS.PNG "PERSONAS")
 
 Para cambiar de persona, solo tiene que hacer clic en el nombre de la persona para la cual desea ver las variables relacionadas.
 
