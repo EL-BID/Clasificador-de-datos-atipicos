@@ -17,8 +17,7 @@ Para poder utilizar esta aplicación el mínimo de hardware requerido es:
 Para poder instalar y utilizar esta aplicación, es necesario cumplir con los siguientes requisitos de software:
 
 * Windows Server 2008 R2 SP1 o superior
-* [Microsoft .NET Framework 4.6.1]
-(https://www.microsoft.com/en-us/download/details.aspx?id=49982 ".NET Framework 4.6.1 Offline Installer") o superior
+* [Microsoft .NET Framework 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49982 ".NET Framework 4.6.1 Offline Installer") o superior
 * Microsoft SQL Server 2008 R2 o superior
 * Binarios de la aplicación (PublishOutput)
 
