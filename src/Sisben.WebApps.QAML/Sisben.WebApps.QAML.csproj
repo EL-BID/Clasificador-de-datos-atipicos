@@ -246,7 +246,6 @@
     <Content Include="Models\SisbenQAMLClasses.edmx.diagram">
       <DependentUpon>SisbenQAMLClasses.edmx</DependentUpon>
     </Content>
-    <Content Include="License.md" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
