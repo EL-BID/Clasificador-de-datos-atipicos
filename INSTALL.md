@@ -3,6 +3,7 @@
 Este documento contiene los requisitos, dependencias y procedimiento de instalación de la aplicación de visualización de indicadores del clasificador.
 
 ##Requisitos
+
 ###Hardware
 ---
 Para poder utilizar esta aplicación el mínimo de hardware requerido es:
