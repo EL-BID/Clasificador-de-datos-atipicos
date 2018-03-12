@@ -51,7 +51,10 @@ Los pasos para instalar y configurar esta aplicación se muestran en el archivo 
 
 ### Cómo contribuir
 ---
-Si deseas contribuir con este proyecto, por favor lea la [Guía para Publicar Herramientas Digitales](https://el-bid.github.io/guia-de-publicacion/ "Guía para Publicar") que establece el [BID](https://www.iadb.org/es "BID").
+Si deseas contribuir con este proyecto, por favor lee las siguientes guías:
+
+* [Guía para Publicar Herramientas Digitales](https://el-bid.github.io/guia-de-publicacion/ "Guía para Publicar") que establece el [BID](https://www.iadb.org/es "BID")
+* [Guía para la Contribución de Código](https://github.com/EL-BID/Plantilla-de-repositorio/blob/master/CONTRIBUTING.md "Guía de Contribución de Código")
 
 ### Código de conducta 
 ---
