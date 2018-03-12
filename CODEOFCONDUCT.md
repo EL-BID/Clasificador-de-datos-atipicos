@@ -40,7 +40,8 @@ Este código de conduct aplica dentro de los espacios del proyecto y en espacios
 públicos cuando el individuo está representando el proyecto o la organización.
 
 Instancias de comportamiento abusivo, de acoso u otro comportamiento inaceptable
-debe ser reportado a su contacto directo dentro del banco.
+debe ser reportado a su contacto directo dentro del banco o a través del correo
+electrónico [code@iadb.org](code@iadb.org "code@iadb.org").
 
 Este código de conducta está basado en el
 [CNCF Community Code of Conduct v1.0](https://github.com/cncf/foundation/blob/master/code-of-conduct.md "CNCF CoC").
