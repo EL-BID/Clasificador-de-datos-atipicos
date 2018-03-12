@@ -43,4 +43,4 @@ Instancias de comportamiento abusivo, de acoso u otro comportamiento inaceptable
 debe ser reportado a su contacto directo dentro del banco.
 
 Este código de conducta está basado en el
-[CNCF Community Code of Conduct v1.0](https://github.com/cncf/foundation/blob/master/code-of-conduct.md "CNCF CoC")
+[CNCF Community Code of Conduct v1.0](https://github.com/cncf/foundation/blob/master/code-of-conduct.md "CNCF CoC").
