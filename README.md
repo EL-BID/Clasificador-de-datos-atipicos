@@ -51,7 +51,7 @@ Los pasos para instalar y configurar esta aplicación se muestran en el archivo 
 
 ### Cómo contribuir
 ---
-Si deseas contribuir con este proyecto, por favor lee el archivo [CONTRIBUTE.md](/CONTRIBUTE.md), el cual contiene todas las pautas al respecto.
+Si deseas contribuir con este proyecto, por favor lea la [Guía para Publicar Herramientas Digitales](https://el-bid.github.io/guia-de-publicacion/ "Guía para Publicar") que establece el [BID](https://www.iadb.org/es "BID").
 
 ### Código de conducta 
 ---
