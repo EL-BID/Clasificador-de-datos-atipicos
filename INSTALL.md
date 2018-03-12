@@ -25,7 +25,7 @@ Para poder instalar y utilizar esta aplicación, es necesario cumplir con los si
 ## Dependencias
 Los paquetes de dependencias de este proyecto están definidos en el archivo [packages.config](src/Sisben.WebApps.QAML/packages.config).
 
-##Procedimiento de instalación
+## Procedimiento de instalación
 Para instalar la aplicación Web para la visualización de indicadores, siga los siguientes pasos:
 
 1. Crear directorio raíz y copiar archivos binarios
@@ -35,11 +35,13 @@ Para instalar la aplicación Web para la visualización de indicadores, siga los
 6. Probar aplicación
 
 ### Crear directorio raíz
+---
 Cree un directorio raíz donde serán colocados los binarios de la aplicación:
 
 ![Directorio Raíz de la Aplicación](img/Capture-wwwroot_qaml.PNG "wwwroot_qaml")
 
 ### Crear nuevo grupo de aplicaciones (Application Pool)
+---
 Inicie la consola de administración de IIS.
 
 ![IIS Manager](img/Capture-IIS_Manager.PNG "IIS Manager")
@@ -53,7 +55,7 @@ Haga clic en **Add Application Pool...** en el panel de la derecha y llene los d
 ![IIS Manager - Add Application Pool](img/Capture-IIS_Manager-AddAppPool.PNG "IIS Manager - Add Application Pool")
 
 ### Crear nuevo sitio Web
-
+---
 Haga clic en **Sites** en el panel de la izquierda.
 
 ![IIS Manager - Sites](img/Capture-IIS_Manager-Sites.PNG "IIS Manager - Sites")
@@ -63,7 +65,7 @@ Haga clic en **Add Website...** en el panel de la derecha y llene los datos para
 ![IIS Manager - Add Site](img/Capture-IIS_Manager-AddSite.PNG "IIS Manager - Add Site")
 
 ### Configurar cadena de conexión (ConnectionString)
-
+---
 Haga clic en **QAML** en el panel de la izquierda bajo el sub-menú **Sites**.
 
 ![IIS Manager -Site Panel](img/Capture-IIS_Manager-QamlSitePanel.PNG "IIS Manager - Site Panel")
@@ -77,7 +79,7 @@ Haga doble clic en la cadena de conexión con el nombre **SISBEN_IVEntities** y 
 ![IIS Manager -Site Connection String Config](img/Capture-IIS_Manager-QamlSiteConnectionStringConfig.PNG "IIS Manager - Site Connection String Config")
 
 ### Probar aplicación
-
+---
 En un explorador de Internet entre la dirección URL de la aplicación. Al hacer esto, debe mostrarle la siguiente página:
 
 ![IIS Manager - Success](img/Capture-Success.PNG "IIS Manager - Success")
