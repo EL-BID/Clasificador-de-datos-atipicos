@@ -1,0 +1,6 @@
+language: csharp
+solution: "./src/Sisben.WebApps.QAML.sln"
+install:
+- travis_retry nuget restore -source "https://www.nuget.org/api/v2" ./src/Sisben.WebApps.QAML.sln
+script:
+- xbuild ./src/Sisben.WebApps.QAML.sln
