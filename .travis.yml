@@ -2,6 +2,6 @@ language: csharp
 solution: src/Sisben.WebApps.QAML.sln
 
 script:
-  - msbuild /p:Configuration=Debug src/Sisben.WebApps.QAML.sln
+  - xbuild /p:Configuration=Debug src/Sisben.WebApps.QAML.sln
 
 
