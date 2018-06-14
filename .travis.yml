@@ -1,7 +1,10 @@
 language: csharp
 solution: src/Sisben.WebApps.QAML.sln
-
+dotnet: 2.0
+dist: trusty
 script:
-  - xbuild src/Sisben.WebApps.QAML.sln
+  - cd ./src
+  - dotnet restore
+  - dotnet build
 
 
