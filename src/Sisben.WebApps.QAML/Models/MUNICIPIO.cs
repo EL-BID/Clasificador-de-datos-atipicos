@@ -11,7 +11,9 @@ namespace Sisben.WebApps.QAML.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("MUNICIPIOS", Schema = "DAT")]
     public partial class MUNICIPIO
     {
         public int cod_mpio { get; set; }

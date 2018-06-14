@@ -10,21 +10,32 @@
 namespace Sisben.WebApps.QAML.Models
 {
     using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
+    using Microsoft.EntityFrameworkCore;
     using System.Linq;
     
     public partial class SISBEN_IVEntities : DbContext
     {
-        public SISBEN_IVEntities()
-            : base("name=SISBEN_IVEntities")
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseSqlServer(@"Data Source=.\sqlexpress;Initial Catalog=SISBEN_IV;Integrated Security=True");
         }
-    
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Entity<CNS_CONTROL_ENVIOS>().HasKey(x => new { x.cod_mpio, x.num_paquete });
+            modelBuilder.Entity<CNS_FICHAS>().HasKey(x => new { x.Cod_mpio, x.Num_ficha });
+            modelBuilder.Entity<CNS_HOGARES>().HasKey(x => new { x.Cod_mpio, x.Num_ficha, x.Ide_hogar });
+            modelBuilder.Entity<CNS_HOGARES_FICHA>().HasKey(x => new { x.Cod_mpio, x.Num_ficha, x.Ord_hogar });
+            modelBuilder.Entity<CNS_HOGARES_RECHAZO>().HasKey(x => new { x.Cod_mpio, x.Num_ficha, x.Ide_hogar });
+            modelBuilder.Entity<CNS_PERSONAS>().HasKey(x => new { x.Cod_mpio, x.Num_ficha, x.Ide_hogar, x.Ide_persona });
+            modelBuilder.Entity<CNS_VIVIENDAS>().HasKey(x => new { x.Cod_mpio, x.Num_ficha });
+            modelBuilder.Entity<DEPARTAMENTO>().HasKey(x => new { x.cod_dpto });
+            modelBuilder.Entity<MUNICIPIO>().HasKey(x => new { x.cod_mpio });
+            modelBuilder.Entity<CNS_CategorySets>().HasKey(x => new { x.Id });
+            modelBuilder.Entity<CNS_HOGARES_Logs>().HasKey(x => new { x.Id });
+
+            modelBuilder.Entity<sp__DAT_Departamentos__Get_Result>().HasKey(x => new { x.cod_dpto });
+            modelBuilder.Entity<sp__Municipios__GetByDpto_Result>().HasKey(x => new { x.cod_mpio });
         }
     
         public virtual DbSet<CNS_CONTROL_ENVIOS> CNS_CONTROL_ENVIOS { get; set; }
@@ -40,24 +51,17 @@ namespace Sisben.WebApps.QAML.Models
         public virtual DbSet<CNS_HOGARES_Logs> CNS_HOGARES_Logs { get; set; }
         public virtual DbSet<CNS_PERSONAS_Logs> CNS_PERSONAS_Logs { get; set; }
         public virtual DbSet<CNS_VIVIENDAS_Logs> CNS_VIVIENDAS_Logs { get; set; }
-    
-        public virtual int sp__ClasificarProximoHogar()
+        public virtual DbSet<sp__DAT_Departamentos__Get_Result> sp_DAT_DFepartamentos__Get_Results { get; set; }
+        public virtual DbSet<sp__Municipios__GetByDpto_Result> sp__Municipios__GetByDpto_Result { get; set; }
+
+        public virtual sp__DAT_Departamentos__Get_Result[] sp__DAT_Departamentos__Get()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp__ClasificarProximoHogar");
+            return this.sp_DAT_DFepartamentos__Get_Results.FromSql("ML.sp__DAT_Departamentos__Get").ToArray();
         }
-    
-        public virtual ObjectResult<sp__DAT_Departamentos__Get_Result> sp__DAT_Departamentos__Get()
+
+        public virtual sp__Municipios__GetByDpto_Result[] sp__Municipios__GetByDpto(string cod_dpto)
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp__DAT_Departamentos__Get_Result>("sp__DAT_Departamentos__Get");
-        }
-    
-        public virtual ObjectResult<sp__Municipios__GetByDpto_Result> sp__Municipios__GetByDpto(string cod_dpto)
-        {
-            var cod_dptoParameter = cod_dpto != null ?
-                new ObjectParameter("cod_dpto", cod_dpto) :
-                new ObjectParameter("cod_dpto", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp__Municipios__GetByDpto_Result>("sp__Municipios__GetByDpto", cod_dptoParameter);
+            return this.sp__Municipios__GetByDpto_Result.FromSql($"ML.sp__Municipios__GetByDpto {cod_dpto}").ToArray();
         }
     }
 }

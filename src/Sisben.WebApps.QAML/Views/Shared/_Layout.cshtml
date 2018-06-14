@@ -4,8 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - QAML SISBEN</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/Site.css" />
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <script type="text/javascript" language="javascript" src="~/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~/js/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~/js/modernizr-2.6.2.js"></script>
+    <script type="text/javascript" language="javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~/js/respond.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -29,8 +36,8 @@
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>
 </html>

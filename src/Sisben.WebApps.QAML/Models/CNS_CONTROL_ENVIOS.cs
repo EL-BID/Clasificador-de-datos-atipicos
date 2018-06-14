@@ -11,7 +11,8 @@ namespace Sisben.WebApps.QAML.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CNS_CONTROL_ENVIOS
     {
         public string cod_dpto { get; set; }
