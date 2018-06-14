@@ -351,24 +351,21 @@
 <div class="row">
     <div class="col-md12">
         <ul class="nav nav-tabs">
-            @{ var first = true; }
             @foreach (var p in ViewBag.Personas)
             {
-                <li @{ WriteLiteral(first ? " class=\"active\"" : ""); }>
+                <li @{ WriteLiteral(p.Ide_persona == 1 ? " class=\"active\"" : ""); }>
                     <a data-toggle="tab" href="#persona_@p.Ide_persona">
                         @p.Ide_persona. @{ Write(string.Join(" ", new string[] { p.Pri_nombre, p.Seg_nombre, p.Pri_apellido, p.Seg_apellido })); }
                     </a>
                 </li>
-                first = false;
             }
         </ul>
 
         <div class="tab-content panel panel-default">
-            @{ first = true; }
             @foreach (Sisben.WebApps.QAML.Models.CNS_PERSONAS p in ViewBag.Personas)
-                {
-                    var scores = ((Sisben.WebApps.QAML.Models.CNS_PERSONAS_Logs[])ViewBag.PersonasLog).Where(x => x.Ide_persona == p.Ide_persona).First();
-                <div id="persona_@p.Ide_persona" class="tab-pane fade in@{ WriteLiteral(first ? " active" : ""); } panel-body">
+            {
+                var scores = ((Sisben.WebApps.QAML.Models.CNS_PERSONAS_Logs[])ViewBag.PersonasLog).Where(x => x.Ide_persona == p.Ide_persona).First();
+                <div id="persona_@p.Ide_persona" class="tab-pane fade in@{ WriteLiteral(p.Ide_persona == 1 ? " active" : ""); } panel-body">
                     <div class="row">
                         <div class="col-md-12">
                             <h2><b>Secci&oacute;n D.</b> Antecedentes sociodemogr&aacute;ficos</h2>
@@ -842,7 +839,6 @@
                         </div>
                     </div>
                 </div>
-                first = false;
             }
         </div>
     </div>

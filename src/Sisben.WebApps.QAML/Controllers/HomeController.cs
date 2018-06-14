@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Sisben.WebApps.QAML.Controllers
 {
@@ -16,7 +16,7 @@ namespace Sisben.WebApps.QAML.Controllers
         /// procesados (e irregulares) para cada uno.
         /// </summary>
         /// <returns>Retorna un objeto ActionResult que contiene los departamentos con sus indicadores.</returns>
-        public ActionResult Index()
+        public IActionResult Index()
         {
             using (var ctx = new Models.SISBEN_IVEntities())
             {
@@ -35,7 +35,7 @@ namespace Sisben.WebApps.QAML.Controllers
         /// Retorna un objeto ActionResult que contiene los municipios del departamento especificado
         /// en el parámetro *cod_dpto* y la información del departamento.
         /// </returns>
-        public ActionResult Municipios(string cod_dpto)
+        public IActionResult Municipios(string cod_dpto)
         {
             var id = Convert.ToInt32(cod_dpto);
             using (var ctx = new Models.SISBEN_IVEntities())
@@ -56,7 +56,7 @@ namespace Sisben.WebApps.QAML.Controllers
         /// Retorna un objeto ActionResult que contiene los hogares del municipio especificado en el
         /// parámetro *cod_mpio* y la información del municipio.
         /// </returns>
-        public ActionResult Hogares(string cod_mpio)
+        public IActionResult Hogares(string cod_mpio)
         {
             var id = Convert.ToInt32(cod_mpio);
             cod_mpio = cod_mpio.PadLeft(5, '0');
@@ -84,7 +84,7 @@ namespace Sisben.WebApps.QAML.Controllers
         /// <param name="num_ficha">Número de ficha a la que está asociado el hogar.</param>
         /// <param name="ide_hogar">Número de orden del hogar dentro de la ficha.</param>
         /// <returns>Retorna un objet ActionResult que contiene los datos mensionados en el resumen.</returns>
-        public ActionResult Hogar(int num_ficha, byte ide_hogar)
+        public IActionResult Hogar(int num_ficha, byte ide_hogar)
         {
             using (var ctx = new Models.SISBEN_IVEntities())
             {

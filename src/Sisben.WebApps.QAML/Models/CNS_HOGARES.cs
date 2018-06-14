@@ -11,7 +11,9 @@ namespace Sisben.WebApps.QAML.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("CNS_HOGARES", Schema = "DAT")]
     public partial class CNS_HOGARES
     {
         public int Num_paquete { get; set; }

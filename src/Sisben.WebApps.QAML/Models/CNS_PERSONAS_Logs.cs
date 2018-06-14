@@ -11,7 +11,9 @@ namespace Sisben.WebApps.QAML.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    [Table("CNS_PERSONAS_Logs", Schema = "ML")]
     public partial class CNS_PERSONAS_Logs
     {
         public long Id { get; set; }
