@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/EL-BID/Supervision-SISBEN-ML.svg?branch=master)](https://travis-ci.org/EL-BID/Supervision-SISBEN-ML)
 
-# Visualizador de Indicadores del Clasificador de Hogares SISBEN
+# Clasificador de datos atípicos
 
 *Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo**. Puedes conocer más sobre la iniciativa del BID en [code.iadb.org](code.iadb.org)*
 
