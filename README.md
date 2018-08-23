@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EL-BID/Supervision-SISBEN-ML.svg?branch=master)](https://travis-ci.org/EL-BID/Supervision-SISBEN-ML)
+[![Build Status](https://travis-ci.org/EL-BID/Clasificador-de-datos-at-picos.svg?branch=master)](https://travis-ci.org/EL-BID/Clasificador-de-datos-at-picos)
 
 # Clasificador de datos atípicos
 
