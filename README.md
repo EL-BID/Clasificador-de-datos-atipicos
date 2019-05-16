@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EL-BID/Clasificador-de-datos-at-picos.svg?branch=master)](https://travis-ci.org/EL-BID/Clasificador-de-datos-at-picos)
+[![Build Status](https://travis-ci.org/EL-BID/Clasificador-de-datos-atipicos.svg?branch=master)](https://travis-ci.org/EL-BID/Clasificador-de-datos-atipicos)
 
 # Clasificador de datos atípicos
 
