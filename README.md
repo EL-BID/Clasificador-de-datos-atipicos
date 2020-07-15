@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/EL-BID/Clasificador-de-datos-atipicos.svg?branch=master)](https://travis-ci.org/EL-BID/Clasificador-de-datos-atipicos)
+[![Analytics](https://gabeacon.irvinlim.com/UA-4677001-16/Clasificador-de-datos-atipicos/readme?useReferer)](https://github.com/EL-BID/Clasificador-de-datos-atipicos)
 
 # Clasificador de datos atípicos
 
