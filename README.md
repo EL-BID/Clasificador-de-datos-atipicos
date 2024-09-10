@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/EL-BID/Clasificador-de-datos-atipicos.svg?branch=master)](https://travis-ci.org/EL-BID/Clasificador-de-datos-atipicos)
-[![Analytics](https://gabeacon.irvinlim.com/UA-4677001-16/Clasificador-de-datos-atipicos/readme?useReferer)](https://github.com/EL-BID/Clasificador-de-datos-atipicos)
-
 # Clasificador de datos atípicos
 
 *Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo**. Puedes conocer más sobre la iniciativa del BID en [code.iadb.org](https://code.iadb.org)*
